@@ -8,10 +8,12 @@
 		"netlify-cli": "latest"
 	},
 	"scripts": {
-		"start": "netlify dev"
+		"start": "netlify dev",
+		"test": "npx playwright test"
 	},
 	"type": "module",
 	"dependencies": {
+		"@playwright/test": "^1.51.0",
 		"@shoelace-style/shoelace": "^2.20.1"
 	}
 }

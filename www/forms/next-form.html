@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Next Form - Rogue-like Form Crawler</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/dark.css">
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
+	<style>
+		:root {
+			--color-background: #121212;
+			--color-text: #ffffff;
+			--color-primary: #bb86fc;
+			--color-secondary: #03dac5;
+			--color-accent: #cf6679;
+		}
+
+		body, html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			background-color: var(--color-background);
+			color: var(--color-text);
+			font-family: 'Arial', sans-serif;
+			overflow: hidden;
+			transition: background-color 1s ease;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			position: relative;
+		}
+
+		.title {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+
+		.form-group {
+			margin-bottom: 1.5rem;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: bold;
+		}
+
+		input[type="text"], input[type="email"] {
+			width: 100%;
+			padding: 0.75rem;
+			border: 1px solid var(--color-primary);
+			border-radius: 4px;
+			font-size: 1rem;
+		}
+
+		button {
+			padding: 0.75rem 1.5rem;
+			background-color: var(--color-primary);
+			color: var(--color-background);
+			border: none;
+			border-radius: 4px;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: var(--color-secondary);
+		}
+
+		.breadcrumb {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			font-size: 0.9rem;
+		}
+
+		.breadcrumb a {
+			color: var(--color-primary);
+			text-decoration: none;
+			margin-right: 5px;
+		}
+
+		.breadcrumb a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="breadcrumb">
+			<a href="../index.html">Home</a> &gt; <a href="./initial.html">Initial Form</a> &gt; Next Form
+		</div>
+		<div class="title">Next Form</div>
+		<form>
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+			</div>
+			<button type="submit">Submit</button>
+		</form>
+		<div class="random-buttons">
+			<button onclick="navigateToNextForm()">Random Button 4</button>
+			<button onclick="damagePlayerStats()">Misleading Button</button>
+			<button onclick="navigateToNextForm()">Random Button 6</button>
+		</div>
+	</div>
+
+	<script type="module">
+		function navigateToNextForm() {
+			document.body.style.backgroundColor = '#000000';
+			setTimeout(() => {
+				window.location.href = './final-form.html';
+			}, 1000);
+		}
+
+		function damagePlayerStats() {
+			alert('You have been misled! Your stats have been damaged.');
+			// Implement the logic to damage player stats here
+		}
+	</script>
+</body>
+</html>

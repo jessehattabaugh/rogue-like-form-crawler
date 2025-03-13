@@ -4,7 +4,7 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 
 ## 🕯️ The First Incantation (Core Systems)
 
--   [ ] **Establish the Digital Circle**
+-   [x] **Establish the Digital Circle**
     -   Initialize the static web project with HTML, CSS, and JavaScript
     -   Configure Shoelace Web Components through CDN for our interface elements
     -   Create the minimalist, liminal index.html with a single mysterious button to begin the journey
@@ -32,13 +32,13 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 
 ## 🧿 The First Gateway (Initial Experience)
 
--   [ ] **Construct the Threshold**
+-   [x] **Construct the Threshold**
     -   Design the hub area with minimalist, liminal aesthetics
     -   Create the initial "mundane" form that subtly introduces players to the mechanics
     -   Add subtle audio cues that respond to hover events and form interactions
     -   Implement the first narrative fragments that hint at deeper mysteries
 
--   [ ] **Establish Navigation Between Realms**
+-   [x] **Establish Navigation Between Realms**
     -   Create the core navigation system between different forms
     -   Add misleading buttons that appear to navigate but actually damage player stats
     -   Design visual transitions between forms to enhance the sense of descent

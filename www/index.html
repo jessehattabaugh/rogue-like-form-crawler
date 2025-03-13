@@ -24,6 +24,7 @@
 			color: var(--color-text-occult);
 			font-family: 'Times New Roman', serif;
 			overflow: hidden;
+			transition: background-color 1s ease;
 		}
 
 		.void-container {
@@ -182,10 +183,19 @@
 				document.getElementById('sound-toggle').name = 'volume-up';
 			}
 
-			// Navigate to the first form after a short delay
-			setTimeout(() => {
-				window.location.href = './forms/initial.html'; // This file needs to be created
-			}, 1000);
+			// Visual transition effect
+			document.body.style.backgroundColor = '#000000';
+
+			// Use view transition API for smooth navigation
+			if (document.startViewTransition) {
+				document.startViewTransition(() => {
+					window.location.href = './forms/initial.html';
+				});
+			} else {
+				setTimeout(() => {
+					window.location.href = './forms/initial.html';
+				}, 1000);
+			}
 		});
 
 		// Log initialization with emoji prefixes
