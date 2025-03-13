@@ -1,37 +1,38 @@
 ---
 name: Bug report or Feature request
-about: Clearly describe bugs or suggest enhancements
+about: Document anomalies in the void or suggest new rituals
 ---
 
-### 🐞 Issue/Bug Description
+### 🌑 Anomaly Description / Ritual Proposal
 
-Briefly explain the problem or feature clearly and concisely.
+Describe the bug you've encountered in the digital labyrinth or the new feature you wish to manifest.
 
-### Steps to Reproduce (if Bug)
+### 🕯️ Steps to Reproduce the Anomaly
 
--   List clear steps to replicate the issue.
--   Provide screenshots or video clips if helpful.
+- List clear steps to summon this anomaly again
+- Provide screenshots or video clips if they help illuminate the void
+- Note any specific time of day when this occurred (forms change with time)
 
-### Expected Behavior
+### 📜 Expected Manifestation
 
-Briefly describe the behavior you expect.
+What you expected to happen when performing this interaction.
 
-### Actual Behavior
+### 🔮 Actual Manifestation
 
-Briefly describe what actually happens.
+What actually transpired in the labyrinth.
 
-### Additional Context
+### 💀 Entity State
 
-Provide any relevant logs, environment details, or extra information.
+Provide any relevant logs, user stats (health/sanity), inventory items, or other contextual information.
 
-### References
+### 🧿 References to the Grimoire
 
--   [#file:README.md](../../README.md)
--   [#file:ROADMAP.md](../../ROADMAP.md)
--   [#file:STYLE_GUIDE.md](../../STYLE_GUIDE.md)
--   [#file:TESTING.md](../../TESTING.md)
--   [#file:CHANGELOG.md](../../CHANGELOG.md)
+- [README.md](../../README.md) - The initial incantation
+- [ROADMAP.md](../../ROADMAP.md) - The path of development
+- [STYLE_GUIDE.md](../../STYLE_GUIDE.md) - The aesthetic principles of our craft
+- [ARCHITECTURE.md](../../ARCHITECTURE.md) - The framework of the void
+- [CHANGELOG.md](../../CHANGELOG.md) - The history of our summoning
 
 ---
 
-Thanks for helping improve the project! 🚀
+*"The form is merely the vessel; what matters is the void it contains."*

@@ -5,7 +5,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🕯️ The First Incantation (Core Systems)
 
 -   [ ] **Establish the Digital Circle**
-
     -   Initialize the static web project with HTML, CSS, and JavaScript
     -   Configure Shoelace Web Components through CDN for our interface elements
     -   Create the minimalist, liminal index.html with a single mysterious button to begin the journey
@@ -20,7 +19,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🌑 The Procedural Rites (Generation Systems)
 
 -   [ ] **Scribe the Form Element Grimoire**
-
     -   Create JSON schemas describing the various form elements (`buttons`, `checkboxes`, `select`, etc.)
     -   Assign magical properties (`poisonous`, `healing`, `ritualValue`, `portal`, `timebound`, `linkedElement`) to form elements
     -   Define visual mutations that occur based on time of day and player stats
@@ -35,7 +33,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🧿 The First Gateway (Initial Experience)
 
 -   [ ] **Construct the Threshold**
-
     -   Design the hub area with minimalist, liminal aesthetics
     -   Create the initial "mundane" form that subtly introduces players to the mechanics
     -   Add subtle audio cues that respond to hover events and form interactions
@@ -50,7 +47,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 💀 Form Interaction Rituals (Core Gameplay)
 
 -   [ ] **Bind Actions to Consequences**
-
     -   Create handlers for all form interactions that update game state appropriately
     -   Implement "poisoned" form elements that damage player stats when interacted with
     -   Add beneficial elements that restore stats or grant inventory items
@@ -65,7 +61,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🕸️ The Weaving of Interface (Enhanced UX)
 
 -   [ ] **Animate the Void**
-
     -   Add subtle animations to buttons based on their true nature
     -   Implement more dramatic animations for significant narrative moments
     -   Create ambient background animations that intensify as player progresses deeper
@@ -80,7 +75,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🔱 Artifacts and Rituals (Gameplay Depth)
 
 -   [ ] **Craft the Inventory of Power**
-
     -   Design the inventory interface with occult aesthetics
     -   Implement items that can be used to influence form behavior
     -   Create ritual components that must be collected across multiple forms
@@ -95,7 +89,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🌓 Chronological Influence (Time-Based Systems)
 
 -   [ ] **Bind the Cosmic Clock**
-
     -   Implement a system that tracks local time and influences game content
     -   Create special forms that only appear during specific hours (3am forms, midnight rituals)
     -   Add subtle visual changes to all forms based on time of day
@@ -110,7 +103,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🎭 The Masks of Form (Visual Variety)
 
 -   [ ] **Craft the Aesthetic Grimoire**
-
     -   Create multiple visual themes (`corporate`, `occult`, `digital`, `ancient`, `void`)
     -   Implement a system to blend themes for uncanny results
     -   Add subtle visual corruption that increases with player progress
@@ -125,7 +117,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 📜 The Hidden Narrative (Story Elements)
 
 -   [ ] **Inscribe the Cryptic Lore**
-
     -   Create a system for revealing narrative fragments through form interactions
     -   Design a hint system with increasingly explicit occult references
     -   Implement conditional text that changes based on player choices and stats
@@ -140,7 +131,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🧩 The Complex Binding (Advanced Mechanics)
 
 -   [ ] **Craft Linked Element Puzzles**
-
     -   Implement form elements that must be activated in specific sequences
     -   Create puzzles where elements in different forms must be synchronized
     -   Add visual and audio clues for puzzle solutions
@@ -155,7 +145,6 @@ This grimoire charts our journey through the development of the Rogue-like Form 
 ## 🌌 The Expansion Beyond (Long-term Features)
 
 -   [ ] **Open Portals to New Realms**
-
     -   Design specialized form types for distinct "regions" of the labyrinth
     -   Create boss-like "guardian forms" that present significant challenges
     -   Implement new mechanics unique to specific regions
