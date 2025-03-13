@@ -3,17 +3,18 @@
 		"@eslint/compat": "latest",
 		"@eslint/eslintrc": "latest",
 		"@eslint/js": "latest",
-		"@playwright/test": "^1.51.0",
+		"@playwright/test": "latest",
+		"@shoelace-style/shoelace": "latest",
 		"eslint": "latest",
 		"globals": "latest",
 		"netlify-cli": "latest"
 	},
 	"scripts": {
-		"start": "netlify dev",
+		"start": "netlify dev --no-open",
 		"test": "npx playwright test"
 	},
 	"type": "module",
 	"dependencies": {
-		"@shoelace-style/shoelace": "^2.20.1"
+
 	}
 }

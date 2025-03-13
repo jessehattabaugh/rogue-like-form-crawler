@@ -6,7 +6,7 @@ This document outlines the procedures for testing the Rogue-like Form Crawler (R
 
 ### General Principles
 
--   **End-to-End Focus:** Tests must interact with actual HTML pages in the `/www` directory.
+-   **End-to-End Focus:** Tests must interact with actual HTML pages through the user interface.
 -   **User-Centric:** Focus on what real users would see and interact with.
 -   **No Mocks:** Avoid mock objects, unit tests, or test fixtures.
 -   **Browser Compatibility:** Ensure tests run on all modern browsers.
@@ -15,6 +15,7 @@ This document outlines the procedures for testing the Rogue-like Form Crawler (R
 
 -   **Test Files:** Correspond to actual pages in the `/www` directory.
 -   **Test Naming:** Use descriptive names that reflect the user journey or interaction being tested.
+-   **URL Format:** Use relative URLs without the `/www/` prefix in test navigation (e.g., `/index.html` not `/www/index.html`).
 
 ## 🛠️ Tools of the Trade
 
@@ -26,21 +27,20 @@ This document outlines the procedures for testing the Rogue-like Form Crawler (R
 This example demonstrates how to test the initial page load of the RLFC.
 
 ```javascript
-// filepath: /home/jesse/rogue-like-form-crawler/tests/initial-page-load.spec.js
+// filepath: /home/jesse/rogue-like-form-crawler/tests/initial-page-load.js
 /**
  * @file Initial page load test for RLFC
  * @module tests/initial-page-load
  */
-
 import { test, expect } from '@playwright/test';
 
-test.describe('Initial Page Load', () => {
-	// Shared emoji for this file
+test.describe('Initial Page Load Ritual 🕯️', () => {
+	// Shared emoji for this file domain
 	const fileEmoji = '🕯️';
 
 	test('should display the correct title and elements', async ({ page }) => {
 		// Navigate to the initial page
-		await page.goto('/www/index.html');
+		await page.goto('/index.html');
 
 		// Check the page title
 		await expect(page).toHaveTitle('Rogue-like Form Crawler');
@@ -60,27 +60,26 @@ test.describe('Initial Page Load', () => {
 ### Form Interaction Test
 
 ```javascript
-// filepath: /home/jesse/rogue-like-form-crawler/tests/form-interaction.spec.js
+// filepath: /home/jesse/rogue-like-form-crawler/tests/form-interaction.js
 /**
  * @file Form interaction test for RLFC
  * @module tests/form-interaction
  */
-
 import { test, expect } from '@playwright/test';
 
-test.describe('Form Interaction', () => {
-	// Shared emoji for this file
+test.describe('Form Interaction Ritual 🔮', () => {
+	// Shared emoji for this file domain
 	const fileEmoji = '🔮';
 
 	test('should navigate to the first form and interact', async ({ page }) => {
 		// Navigate to the initial page
-		await page.goto('/www/index.html');
+		await page.goto('/index.html');
 
 		// Click the enter button
 		await page.click('#enter-button');
 
 		// Wait for navigation to the first form
-		await page.waitForURL('/www/forms/initial.html');
+		await page.waitForURL('/forms/initial.html');
 
 		// Check for the presence of a form element
 		const formElement = page.locator('form');
