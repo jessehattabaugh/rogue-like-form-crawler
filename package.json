@@ -10,5 +10,8 @@
 	"scripts": {
 		"start": "netlify dev"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@shoelace-style/shoelace": "^2.20.1"
+	}
 }
