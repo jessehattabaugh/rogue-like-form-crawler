@@ -35,3 +35,5 @@
 
 - **JavaScript Modules:** Use ES modules exclusively—each module a page from a different grimoire—and employ modern JavaScript features such as destructuring like dissection and template literals like incantations.
 
+- **Testing:** use describe() to describe what you are testing, create nested describes to group similar tests. always use features of the DOM that are important for screenreaders, such as aria roles to select elements for testing.
+
