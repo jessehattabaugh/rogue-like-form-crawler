@@ -1,95 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="A modern web boilerplate with cutting-edge features" data-site-description>
-	<meta name="theme-color" content="#000000">
-	<meta name="color-scheme" content="dark light">
-	<meta name="view-transition" content="same-origin">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rogue-like Form Crawler</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/dark.css">
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
+	<style>
+		:root {
+			--color-void: #121212;
+			--color-void-lighter: #1E1E1E;
+			--color-text-occult: #DACBF1;
+			--color-ritual: #7030A0;
+			--glow-purple: 0 0 10px rgba(128, 0, 128, 0.6);
+		}
 
-	<title>Modern Web Boilerplate</title>
-	<link rel="manifest" href="/manifest.json">
-	<link rel="icon" href="/favicon.ico">
+		body, html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			background-color: var(--color-void);
+			color: var(--color-text-occult);
+			font-family: 'Times New Roman', serif;
+			overflow: hidden;
+		}
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="/styles/all.css">
-	<link rel="stylesheet" href="/styles/index.css">
-	<link rel="stylesheet" href="/styles/wide.css" media="(min-width: 960px)">
-	<link rel="stylesheet" href="/styles/print.css" media="print">
+		.void-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			position: relative;
+		}
 
-	<!-- JavaScript modules with performance attributes -->
-	<script type="module" async src="/scripts/async.js"></script>
-	<script type="module" defer src="/scripts/index.js"></script>
+		.sigil {
+			position: absolute;
+			opacity: 0.03;
+			pointer-events: none;
+			width: 100%;
+			height: 100%;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><circle cx="400" cy="400" r="300" fill="none" stroke="white" stroke-width="2"/><path d="M400,100 L400,700 M100,400 L700,400 M250,250 L550,550 M250,550 L550,250" stroke="white" stroke-width="1"/></svg>');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+
+		.title {
+			font-size: 1.2rem;
+			letter-spacing: 0.5rem;
+			text-transform: uppercase;
+			margin-bottom: 5rem;
+			opacity: 0.7;
+			text-align: center;
+		}
+
+		.portal {
+			position: relative;
+			width: 120px;
+			height: 120px;
+		}
+
+		#enter-button {
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background-color: var(--color-void-lighter);
+			color: var(--color-text-occult);
+			border: 1px solid var(--color-ritual);
+			cursor: pointer;
+			transition: all 0.5s ease;
+			font-family: 'Times New Roman', serif;
+			letter-spacing: 2px;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			box-shadow: var(--glow-purple);
+		}
+
+		#enter-button:hover {
+			box-shadow: 0 0 20px rgba(128, 0, 128, 0.8);
+			transform: scale(1.05);
+		}
+
+		.subtitle {
+			margin-top: 4rem;
+			font-size: 0.8rem;
+			opacity: 0.5;
+			max-width: 300px;
+			text-align: center;
+			font-style: italic;
+			line-height: 1.6;
+		}
+
+		.ambient-container {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			opacity: 0.5;
+		}
+	</style>
 </head>
-
 <body>
-	<a href="#main-content" class="sr-only focus-visible">Skip to main content</a>
+	<div class="void-container">
+		<div class="sigil"></div>
+		<div class="title">Rogue-like Form Crawler</div>
+		<div class="portal">
+			<button id="enter-button">ENTER</button>
+		</div>
+		<div class="subtitle">"The form is merely the vessel; what matters is the void it contains."</div>
+		<div class="ambient-container">
+			<sl-icon-button name="volume-up" label="Toggle ambient sound" id="sound-toggle"></sl-icon-button>
+		</div>
+	</div>
 
-	<site-header>
-		<ul>
-			<li><a href="/index.html" aria-current="page">Home</a></li>
-			<li><a href="/about.html">About</a></li>
-			<li><a href="/contact.html">Contact</a></li>
-		</ul>
-		<theme-toggle></theme-toggle>
-	</site-header>
+	<script type="module">
+		// Initialize ambient sound (will play only after user interaction)
+		const ambientSound = new Audio();
+		ambientSound.src = './assets/audio/ambient.mp3'; // This file needs to be created
+		ambientSound.loop = true;
+		ambientSound.volume = 0.2;
 
-	<main id="main-content" class="container" tabindex="-1">
-		<section class="hero">
-			<div class="hero-overlay"></div>
-			<div class="hero-content">
-				<h1>Modern Web Boilerplate</h1>
-				<p>A lightweight, accessible, and modern starting point for web projects</p>
-				<a href="/about.html" class="cta-button">Learn More</a>
-			</div>
-		</section>
+		let soundEnabled = false;
 
-		<section class="features">
-			<article class="feature-card">
-				<h2>Modern JavaScript</h2>
-				<p>ES Modules, Web Components, and clean code patterns for maintainable projects</p>
-			</article>
+		// Sound toggle handler
+		document.getElementById('sound-toggle').addEventListener('click', () => {
+			soundEnabled = !soundEnabled;
 
-			<article class="feature-card">
-				<h2>Accessibility First</h2>
-				<p>WCAG-compliant markup, keyboard navigation, and screen reader support built-in</p>
-			</article>
+			if (soundEnabled) {
+				ambientSound.play();
+				document.getElementById('sound-toggle').name = 'volume-up';
+			} else {
+				ambientSound.pause();
+				document.getElementById('sound-toggle').name = 'volume-mute';
+			}
+		});
 
-			<article class="feature-card">
-				<h2>Performance Focused</h2>
-				<p>Optimized for Core Web Vitals and fast loading on all devices</p>
-			</article>
-		</section>
+		// Enter button handler with subtle pulse animation
+		const enterButton = document.getElementById('enter-button');
 
-		<section aria-labelledby="testimonials-heading">
-			<h2 id="testimonials-heading">What People Say</h2>
-			<image-carousel auto-play interval="5000" aria-label="Testimonials carousel">
-				<carousel-item>
-					<blockquote class="testimonial">
-						<p>This boilerplate saved me hours of setup time. Highly recommended!</p>
-						<footer class="testimonial-author">
-							<cite>Alex Chen, Web Developer</cite>
-						</footer>
-					</blockquote>
-				</carousel-item>
-				<carousel-item>
-					<blockquote class="testimonial">
-						<p>The accessibility features are top-notch and helped me build an inclusive web app.</p>
-						<footer class="testimonial-author">
-							<cite>Jordan Taylor, UX Designer</cite>
-						</footer>
-					</blockquote>
-				</carousel-item>
-			</image-carousel>
-		</section>
-	</main>
+		// Subtle pulse animation
+		let pulseIntensity = 0;
+		let increasing = true;
 
-	<site-footer>
-		<p>Built with <span aria-hidden="true">❤️</span><span class="sr-only">love</span> and modern web standards</p>
-		<p>&copy; <span id="current-year">2023</span> Modern Web Boilerplate</p>
-	</site-footer>
+		function pulseAnimation() {
+			if (increasing) {
+				pulseIntensity += 0.005;
+				if (pulseIntensity >= 1) {
+					increasing = false;
+				}
+			} else {
+				pulseIntensity -= 0.005;
+				if (pulseIntensity <= 0.2) {
+					increasing = true;
+				}
+			}
+
+			enterButton.style.boxShadow = `0 0 ${10 + pulseIntensity * 10}px rgba(128, 0, 128, ${0.3 + pulseIntensity * 0.3})`;
+			requestAnimationFrame(pulseAnimation);
+		}
+
+		pulseAnimation();
+
+		// Navigate to the first form when clicked
+		enterButton.addEventListener('click', () => {
+			// Play a sound effect on click
+			if (soundEnabled) {
+				const clickSound = new Audio();
+				clickSound.src = './assets/audio/portal.mp3'; // This file needs to be created
+				clickSound.play();
+			}
+
+			// Visual effect before navigation
+			enterButton.style.transform = 'scale(1.2)';
+			enterButton.style.opacity = '0';
+
+			// Enable sound if not already enabled when user interacts
+			if (!soundEnabled) {
+				soundEnabled = true;
+				ambientSound.play();
+				document.getElementById('sound-toggle').name = 'volume-up';
+			}
+
+			// Navigate to the first form after a short delay
+			setTimeout(() => {
+				window.location.href = './forms/initial.html'; // This file needs to be created
+			}, 1000);
+		});
+
+		// Log initialization with emoji prefixes
+		console.info('🕯️ 🌑 RLFC: Gateway initialized. Awaiting traveler interaction.');
+	</script>
 </body>
-
 </html>
