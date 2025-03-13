@@ -108,7 +108,16 @@
 				<label for="email">Email:</label>
 				<input type="email" id="email" name="email" required>
 			</div>
-			<button type="submit">Submit</button>
+			<div class="form-group">
+				<label for="age">Age:</label>
+				<input type="number" id="age" name="age" required>
+			</div>
+			<div class="form-group">
+				<label for="feedback">Feedback:</label>
+				<textarea id="feedback" name="feedback" required></textarea>
+			</div>
+			<button type="button" onclick="navigateToNextForm()">Go to Next Form</button>
+			<button type="button" onclick="navigateToFinalForm()">Go to Final Form</button>
 		</form>
 		<div class="random-buttons">
 			<button onclick="navigateToNextForm()">Random Button 1</button>
@@ -128,6 +137,13 @@
 		function damagePlayerStats() {
 			alert('You have been misled! Your stats have been damaged.');
 			// Implement the logic to damage player stats here
+		}
+
+		function navigateToFinalForm() {
+			document.body.style.backgroundColor = '#000000';
+			setTimeout(() => {
+				window.location.href = './final-form.html';
+			}, 1000);
 		}
 	</script>
 </body>

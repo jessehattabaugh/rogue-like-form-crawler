@@ -104,7 +104,16 @@
 				<label for="final-input">Final Input:</label>
 				<input type="text" id="final-input" name="final-input" required>
 			</div>
-			<button type="submit">Submit</button>
+			<div class="form-group">
+				<label for="age">Age:</label>
+				<input type="number" id="age" name="age" required>
+			</div>
+			<div class="form-group">
+				<label for="feedback">Feedback:</label>
+				<textarea id="feedback" name="feedback" required></textarea>
+			</div>
+			<button type="button" onclick="navigateToInitialForm()">Go to Initial Form</button>
+			<button type="button" onclick="navigateToNextForm()">Go to Next Form</button>
 		</form>
 		<div class="random-buttons">
 			<button onclick="navigateToNextForm()">Random Button 7</button>
@@ -125,6 +134,13 @@
 			alert('You have been misled! Your stats have been damaged.');
 			// Implement the logic to damage player stats here
 		}
+
+		function navigateToInitialForm() {
+				document.body.style.backgroundColor = '#000000';
+				setTimeout(() => {
+					window.location.href = './initial.html';
+				}, 1000);
+			}
 	</script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 		"@eslint/compat": "latest",
 		"@eslint/eslintrc": "latest",
 		"@eslint/js": "latest",
+		"@playwright/test": "^1.51.0",
 		"eslint": "latest",
 		"globals": "latest",
 		"netlify-cli": "latest"
@@ -13,7 +14,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@playwright/test": "^1.51.0",
 		"@shoelace-style/shoelace": "^2.20.1"
 	}
 }
